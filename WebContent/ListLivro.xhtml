@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<title>Lista Livro</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+		<ui:composition template="TemplatePerfilAdministrador.xhtml">
+		<ui:define name="conteudo">
+		<h3>Livros Cadastrados</h3>
+		<p:dataTable value="#{mLivroBean.livros}" var="livroCadastrado" style="margin-right:350px">
+			<p:column>
+				<f:facet name="header">Código</f:facet>
+				<h:outputText value="#{livroCadastrado.cod}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{livroCadastrado.nome}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Gênero</f:facet>
+				<h:outputText value="#{livroCadastrado.genero.nome}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Autor</f:facet>
+				<h:outputText value="#{livroCadastrado.autor.sobrenome}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Ano</f:facet>
+				<h:outputText value="#{livroCadastrado.dataLan}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Qtde páginas</f:facet>
+				<h:outputText value="#{livroCadastrado.qtdePagL}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Alterar</f:facet>
+				<p:commandLink value="Alterar" action="#{mLivroBean.enviarDadosParaAlterar(livroCadastrado)}">
+				</p:commandLink>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Excluir</f:facet>
+				<p:commandLink value="Excluir" action="#{mLivroBean.removerLivro(livroCadastrado)}">
+				</p:commandLink>
+			</p:column>
+		</p:dataTable>
+		</ui:define>
+		</ui:composition>
+	</h:form>
+</h:body>	
+</html>

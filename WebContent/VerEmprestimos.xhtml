@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<title>Lista Emprestimo</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+		<ui:composition template="TemplatePerfilUsuComum.xhtml">
+		<ui:define name="conteudo">
+		<h3>Seu histórico de empréstimos</h3>
+		<p:dataTable value="#{mEmprestimoBean.emprestimos}" var="emprestimosGuardados" style="margin-right:350px">
+			<p:column>
+				<f:facet name="header">Usuário</f:facet>
+				<h:outputText value="#{emprestimosGuardados.usuComum.user}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Código do livro</f:facet>
+				<h:outputText value="#{emprestimosGuardados.livro.cod}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">nome da obra</f:facet>
+				<h:outputText value="#{emprestimosGuardados.livro.nome}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Emprestado em</f:facet>
+				<h:outputText value="#{emprestimosGuardados.data}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Endereço entrega</f:facet>
+				<h:outputText value="#{emprestimosGuardados.endereco}">
+				</h:outputText>
+			</p:column>
+		</p:dataTable>
+		<br/>
+		<p>O Usuário tem 7 dias úteis para ultilizar o livro. Após isso, no oitavo dia, deverá efetuar a devolução</p>
+		</ui:define>
+		</ui:composition>
+	</h:form>
+</h:body>	
+</html>

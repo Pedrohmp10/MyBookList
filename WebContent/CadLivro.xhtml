@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+<title>Cadastrar Livro</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO-8859-1">	
+		<ui:composition template="TemplatePerfilAdministrador.xhtml">
+		<ui:define name="conteudo">
+		<b:messages id="messages" />
+		<h:panelGrid>
+			<h3>Cadastro de Livro</h3>
+			<hr/>
+			<h:outputText  value="Código:" />
+			<b:inputText pt:placeholder="Código do livro" value="#{mLivroBean.livro.cod}">
+				<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+			</b:inputText>
+			
+			<h:outputText  value="Nome:" />
+			<b:inputText pt:placeholder="Nome da obra: " value="#{mLivroBean.livro.nome}">
+				<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+			</b:inputText>
+			
+			<h:outputText value="Gênero:" />
+				<b:selectOneMenu colspan="2" value="#{mLivroBean.idGenero}" collspan="2">
+					<f:selectItem itemLabel=" -- Selecione -- " itemValue="0">
+					</f:selectItem>
+					<f:selectItems value="#{mGeneroBean.generos}" var="genero" 
+								   itemLabel="#{genero.nome}" itemValue="#{genero.id}">
+					</f:selectItems>
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+				</b:selectOneMenu>
+				
+				<h:outputText value="Autor:" />
+				<b:selectOneMenu colspan="2" value="#{mLivroBean.idAutor}" collspan="2">
+					<f:selectItem itemLabel=" -- Selecione -- " itemValue="0">
+					</f:selectItem>
+					<f:selectItems value="#{mAutorBean.autores}" var="autor" 
+								   itemLabel="#{autor.nome} - #{autor.sobrenome}" itemValue="#{autor.id}">
+					</f:selectItems>
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+				</b:selectOneMenu>
+				
+				<h:outputText  value="Ano: " />
+				<b:inputText pt:placeholder="Ano de lançamento" value="#{mLivroBean.livro.dataLan}">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+				</b:inputText>
+				
+				<h:outputText  value="Quantidade de Páginas: " />
+				<b:inputText pt:placeholder="ex: 200" value="#{mLivroBean.livro.qtdePagL}">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputText>
+			
+			<b:commandButton value="Gravar" action="#{mLivroBean.addLivro(mLivroBean.livro)}" />
+			
+		</h:panelGrid>
+		</ui:define>
+		</ui:composition>
+	</h:form>
+</h:body>
+</html>

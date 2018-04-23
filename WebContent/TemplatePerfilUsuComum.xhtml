@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui"
+ 	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<title>Perfil Usuário</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+	<a href="PerfilUsuComum.xhtml"><img src="http://i64.tinypic.com/2i1pct5.jpg" height="50px" border="0" alt="Image and video hosting by TinyPic"></img></a>
+	<b:navBar sticky="false" brand="Início" brandHref="PerfilUsuComum.xhtml" inverse="true"  >
+		<b:navbarLinks>
+			<b:navLink value="Empréstimo" href="Emprestimo.xhtml"></b:navLink>
+			
+			<b:navLink value="Histórico de Empréstimo" href="VerEmprestimos.xhtml"></b:navLink>
+			<b:navLink value="Alterar meus dados" href="AltUsuario.xhtml"></b:navLink>
+			<b:navCommandLink value="Logout" action="#{mUsuComumBean.logout}">
+			</b:navCommandLink>
+		</b:navbarLinks>
+	</b:navBar>
+	<h2  style="margin-left:25px">Meu Perfil</h2>
+	<div id="conteudo" style="margin-left: 15px">
+		<!-- Conteúdo dinâmico das páginas que vão utilizar o template -->
+		<ui:insert name="conteudo">
+		</ui:insert>
+	</div>
+	<footer>
+		<hr/>
+		<p style="margin-left: 10px">© MyBookList - MBL - Desenvolvido por Petterson e Pedro</p>
+	</footer>
+ 	<ui:insert name="teste">
+	</ui:insert>
+ 	</h:form>
+</h:body>
+</html>

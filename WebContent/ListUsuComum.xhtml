@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<title>Lista Usuários</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+		<ui:composition template="TemplatePerfilAdministrador.xhtml">
+		<ui:define name="conteudo">
+		<h3>Usuários Cadastrados</h3>
+		<p:dataTable value="#{mUsuComumBean.usersC}" var="userCadastrado" style="margin-right:0px">
+			<p:column>
+				<f:facet name="header">UserName</f:facet>
+				<h:outputText value="#{userCadastrado.user}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Senha</f:facet>
+				<h:outputText value="#{userCadastrado.senha}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{userCadastrado.nome}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Sobrenome</f:facet>
+				<h:outputText value="#{userCadastrado.sobre}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">CPF</f:facet>
+				<h:outputText value="#{userCadastrado.cpf}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">E-mail    </f:facet>
+				<h:outputText value="#{userCadastrado.email}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Celular</f:facet>
+				<h:outputText value="#{userCadastrado.cel}">
+				</h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Alterar</f:facet>
+				<p:commandLink value="Alterar" action="#{mUsuComumBean.enviarDadosParaAlterar(userCadastrado)}">
+				</p:commandLink>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Excluir</f:facet>
+				<p:commandLink value="Excluir" action="#{mUsuComumBean.removerUsuComum(userCadastrado)}">
+				</p:commandLink>
+			</p:column>
+		</p:dataTable>
+		</ui:define>
+		</ui:composition>
+	</h:form>
+</h:body>	
+</html>

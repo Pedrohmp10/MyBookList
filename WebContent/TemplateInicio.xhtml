@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Login Usuário</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+		<a href="Inicio.xhtml"><img
+			src="http://i64.tinypic.com/2i1pct5.jpg" height="50px" border="0"
+			alt="Image and video hosting by TinyPic"></img></a>
+		<b:navBar sticky="false" brand="Início" brandHref="Inicio.xhtml"
+			inverse="true">
+			<b:navbarLinks>
+				<b:navLink value="Cadastrar-se" href="CadUsuComum.xhtml">
+				</b:navLink>
+				<b:dropMenu value="Livros">
+					<b:navLink value="Pesquisar Livro"
+						href="BuscarLivro.xhtml?faces-redirect=true"></b:navLink>
+					<b:navLink value="Autores" href="VerAutor.xhtml"></b:navLink>
+					<b:navLink value="Gêneros" href="VerGenero.xhtml"></b:navLink>
+				</b:dropMenu>
+				<b:navLink value="Sobre" href="Sobre.xhtml">
+				</b:navLink>
+				<b:navLink value="Ajuda" href="Ajuda.xhtml">
+				</b:navLink>
+				<b:navLink value="ADM" href="LoginAdministrador.xhtml">
+				</b:navLink>
+			</b:navbarLinks>
+		</b:navBar>
+		<div id="conteudo" style="margin-left: 15px">
+			<!-- Conteúdo dinâmico das páginas que vão utilizar o template -->
+			<ui:insert name="conteudo">
+			</ui:insert>
+		</div>
+		<footer>
+		<hr />
+		<p style="margin-left: 10px">© MyBookList - MBL - Desenvolvido por
+			Petterson e Pedro</p>
+		</footer>
+		<ui:insert name="teste">
+		</ui:insert>
+	</h:form>
+</h:body>
+</html>

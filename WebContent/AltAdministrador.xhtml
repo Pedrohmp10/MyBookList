@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Alterar Administrador</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+		<ui:composition template="TemplatePerfilAdministrador.xhtml">
+			<ui:define name="conteudo">
+				<h:panelGrid style="margin-left:10px; margin-bottom:20px">
+					<h1>Alterar dados</h1>
+					<hr />
+
+					<h:outputText value="Senha:" />
+					<b:inputSecret pt:placeholder="Insira  uma senha válida"
+						value="#{mAdministradorBean.adm.senha}">
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+					</b:inputSecret>
+
+					<h:outputText value="Nome:" />
+					<b:inputText pt:placeholder="Primeiro nome"
+						value="#{mAdministradorBean.adm.nome}">
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+					</b:inputText>
+
+					<h:outputText value="Sobrenome:" />
+					<b:inputText pt:placeholder="Sobrenome(máximo 2)"
+						value="#{mAdministradorBean.adm.sobre}">
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+					</b:inputText>
+
+					<h:outputText value="CPF:" />
+					<b:inputText pt:placeholder="Insira seu CPF"
+						value="#{mAdministradorBean.adm.cpf}">
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+					</b:inputText>
+
+					<h:outputText value="E-mail:" />
+					<b:inputText pt:placeholder="Insira seu e-mail"
+						value="#{mAdministradorBean.adm.email}">
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+					</b:inputText>
+
+					<h:outputText value="Celular:" />
+					<b:inputText pt:placeholder="Celular(com DDD)"
+						value="#{mAdministradorBean.adm.cel}">
+						<f:facet name="prepend">
+							<b:icon name="user"></b:icon>
+						</f:facet>
+					</b:inputText>
+					<b:commandButton value="Alterar"
+						action="#{mAdministradorBean.alterarAdministrador(mAdministradorBean.adm)}">
+					</b:commandButton>
+				</h:panelGrid>
+			</ui:define>
+		</ui:composition>
+	</h:form>
+</h:body>
+</html>

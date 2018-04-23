@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+<title>Ver Livro</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO-8859-1">	
+	<a href="Inicio.xhtml"><img src="http://i64.tinypic.com/2i1pct5.jpg" height="50px" border="0" alt="Image and video hosting by TinyPic"></img></a>
+	<h:panelGrid style="margin-left:10px; margin-bottom:20px">
+		<h1>Informações</h1>
+		<hr/>
+		<h:outputText  value="Código: #{mLivroBean.livro.cod}" >
+			<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+		</h:outputText>
+		<h:outputText  value="Nome: #{mLivroBean.livro.nome}" >
+			<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+		</h:outputText>
+		<h:outputText  value="Gênero: #{mLivroBean.livro.genero.nome}" >
+			<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+		</h:outputText>
+		<h:outputText  value="Autor: #{mLivroBean.livro.autor.nome}" >
+			<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+		</h:outputText>
+		<h:outputText  value="Ano: #{mLivroBean.livro.dataLan}" >
+			<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+		</h:outputText>
+		<h:outputText  value="Qtde páginas: #{mLivroBean.livro.qtdePagL}" >
+			<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+		</h:outputText>
+		<b:commandButton value="Voltar" action="BuscarLivro.xhtml"/>
+		</h:panelGrid>
+		<footer>
+			<hr/>
+			<p style="margin-left: 10px">© MyBookList - MBL - Desenvolvido por Petterson e Pedro</p>
+		</footer>
+	</h:form>
+</h:body>
+</html>

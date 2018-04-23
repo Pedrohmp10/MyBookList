@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<title>Cadastro de Autor</title>
+</h:head>
+<h:body>
+	<h:form acceptcharset="ISO_8859-1">
+		<ui:composition template="TemplatePerfilAdministrador.xhtml">
+		<ui:define name="conteudo">
+		<h:panelGrid >
+			<h3 >Cadastro de Autor</h3>
+			<hr/>
+			<h:outputText  value="Nome:" />
+			<b:inputText pt:placeholder="Nome do Autor" value="#{mAutorBean.autor.nome}">
+				<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+			</b:inputText>
+			<h:outputText  value="Sobrenome:" />
+			<b:inputText pt:placeholder="Sobrenome do Autor" value="#{mAutorBean.autor.sobrenome}">
+				<f:facet name="prepend">
+					<b:icon name="user"></b:icon>
+				</f:facet>
+			</b:inputText>
+			<h:outputText  value="Idade:" />
+			<b:inputText pt:placeholder="Idade do Autor" value="#{mAutorBean.autor.idade}">
+				<f:facet name="prepend">
+					<b:icon name="calendar"></b:icon>
+				</f:facet>
+			</b:inputText>		
+			<b:commandButton value="Gravar" action="#{mAutorBean.addAutor(mAutorBean.autor)}" />
+		</h:panelGrid>
+		</ui:define>
+		</ui:composition>
+	</h:form>
+</h:body>
+</html>
